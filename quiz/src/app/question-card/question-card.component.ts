@@ -13,7 +13,7 @@ export class QuestionCardComponent implements OnInit {
   question:any;
   answer:any;
   separateQuestions: any;
-  categoryId = 0;
+  categoryId: number = 0;
   itemIndex: any;
   categoryd: Category[] = [
     {id:0, name:"Random"},
@@ -24,7 +24,9 @@ export class QuestionCardComponent implements OnInit {
     {id:17, name:"U.S. States"},
     {id:8, name:"Time"},
   ]
-  defaultCategory = 0;
+  defaultCategory: number = 0;
+  show: boolean = false;
+  showTitle: String = "Show Answer"
 
   constructor(private http:HttpClient) { }
 
@@ -54,9 +56,8 @@ export class QuestionCardComponent implements OnInit {
         console.log("Ready with question")
         this.itemIndex = 0;
       }
-    
-      
     }
+    this.hideAnswer();
   }
 
   filterCategory(value) {
@@ -75,4 +76,13 @@ export class QuestionCardComponent implements OnInit {
     }
   }
 
+  toggleShow() {
+    this.show = !this.show
+    this.show ? this.showTitle="Hide Answer" : this.showTitle="Show Answer"  
+  }
+
+  hideAnswer(){
+    this.show = false;
+    this.showTitle = "Show Answer";
+  }
 }

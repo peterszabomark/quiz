@@ -11,10 +11,10 @@
     <div class="card-question">{{question}}</div>
     <input class="card-input" type="text" name="useranswer" placeholder="Write you answer">
     <div class="card-fill">
-        <button class="card-button show" >Show Answer</button>
+        <button class="card-button show" (click)="toggleShow()">{{showTitle}}</button>
         <button class="card-button add" >Add Answer</button>
     </div>
 </div>
-<div class="answer-container">
+<div class="answer-container" *ngIf="show">
     <app-answer-card [answer]="answer"></app-answer-card>
 </div>
