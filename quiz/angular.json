@@ -123,6 +123,10 @@
           }
         }
       }
-    }},
-  "defaultProject": "quiz"
+    }
+  },
+  "defaultProject": "quiz",
+  "cli": {
+    "analytics": false
+  }
 }
