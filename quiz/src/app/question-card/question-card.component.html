@@ -1,6 +1,11 @@
 <div class="card-container">
     <div class="header">
-        <div class="title">Question</div>
+        <div class="question-category">
+            <div class="title">Question</div>
+            <select name="category" id="category" class="category-select" [(ngModel)]="defaultCategory" (ngModelChange)="filterCategory($event)">
+                <option *ngFor="let cat of categoryd" [value]="cat.id"> {{cat.name}}</option>
+            </select>
+        </div>
         <button class="card-next-button" (click)="addNewQuestion()">Next Question</button>
     </div>
     <div class="card-question">{{question}}</div>

@@ -1,5 +1,6 @@
 import { Component, OnInit } from '@angular/core';
 import { HttpClient } from '@angular/common/http';
+import { Category } from '../models/category.model';
 
 @Component({
   selector: 'app-question-card',
@@ -8,8 +9,18 @@ import { HttpClient } from '@angular/common/http';
 })
 export class QuestionCardComponent implements OnInit {
 
+
   question:any;
   answer:any;
+  categoryd: Category[] = [
+    {id:0, name:"Random"},
+    {id:21, name:"Animals"},
+    {id:2, name:"Baseball"},
+    {id:16, name:"Cars"},
+    {id:7, name:"U.S. Cities"},
+    {id:17, name:"U.S. States"},
+    {id:8, name:"Time"},
+  ]
 
   constructor(private http:HttpClient) { }
 
