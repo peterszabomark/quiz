@@ -22,4 +22,13 @@ export class QuestionCardComponent implements OnInit {
       })
   }
 
+  addNewQuestion() {
+    let response = this.http.get("http://jservice.io/api/random");
+      response.subscribe((data) => {
+        this.question = data[0].question;
+        this.answer= data[0].answer
+      }
+      )
+  }
+
 }
