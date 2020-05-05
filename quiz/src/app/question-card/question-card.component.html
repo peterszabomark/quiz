@@ -1,12 +1,20 @@
 <div class="card-container">
     <div class="header">
-        <div class="title">Question</div>
-        <button class="card-next-button">Next Question</button>
+        <div class="question-category">
+            <div class="title">Question</div>
+            <select name="category" id="category" class="category-select" [(ngModel)]="defaultCategory" (ngModelChange)="filterCategory($event)">
+                <option *ngFor="let cat of categoryd" [value]="cat.id"> {{cat.name}}</option>
+            </select>
+        </div>
+        <button class="card-next-button" (click)="addNewQuestion()">Next Question</button>
     </div>
-    <div class="card-question">How are you?</div>
+    <div class="card-question">{{question}}</div>
     <input class="card-input" type="text" name="useranswer" placeholder="Write you answer">
     <div class="card-fill">
         <button class="card-button show" >Show Answer</button>
         <button class="card-button add" >Add Answer</button>
     </div>
+</div>
+<div class="answer-container">
+    <app-answer-card [answer]="answer"></app-answer-card>
 </div>
