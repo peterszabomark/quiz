@@ -11,7 +11,10 @@ export class QuestionCardComponent implements OnInit {
 
 
   question:any;
-  answer:any;
+  correctAnswer: any;
+  userAnswer: any;
+  addedAnswer: any;
+  result: String;
   separateQuestions: any;
   categoryId: number = 0;
   itemIndex: any;
@@ -34,7 +37,7 @@ export class QuestionCardComponent implements OnInit {
     let response = this.http.get("http://jservice.io/api/random");
     response.subscribe((data) => {
       this.question = data[0].question;
-      this.answer= data[0].answer
+      this.correctAnswer= data[0].answer
       console.log(data)
       })
   }
@@ -44,13 +47,13 @@ export class QuestionCardComponent implements OnInit {
       let response = this.http.get("http://jservice.io/api/random");
       response.subscribe((data) => {
         this.question = data[0].question;
-        this.answer= data[0].answer
+        this.correctAnswer = data[0].answer
       }
       )
     }else{
       if(this.itemIndex < this.separateQuestions.length){
         this.question = this.separateQuestions[this.itemIndex].question;
-        this.answer = this.separateQuestions[this.itemIndex].answer;
+        this.correctAnswer = this.separateQuestions[this.itemIndex].answer;
         this.itemIndex++
       } else {
         console.log("Ready with question")
@@ -66,7 +69,6 @@ export class QuestionCardComponent implements OnInit {
       practice.subscribe((data: any) => {
         this.separateQuestions = data.clues
         this.categoryId = value ;
-        console.log(this.separateQuestions)
         this.itemIndex = 0;
         this.addNewQuestion();
       });
@@ -76,13 +78,35 @@ export class QuestionCardComponent implements OnInit {
     }
   }
 
+  addAnswer(answer){
+    if(answer === undefined){
+      alert("Write your answer!") 
+      return null
+    }
+    this.userAnswer = "Your answer: " + answer;
+    if(this.addedAnswer){
+      if(this.correctAnswer.toUpperCase() == answer.toUpperCase()){
+        this.result = "Correct!"
+      }else{
+        this.result = "Incorrect!"
+      }
+    } else {
+      this.result = "Incorrect!"
+    }
+    this.show = true;
+    this.showTitle = "Hide Answer"
+  }
+
   toggleShow() {
     this.show = !this.show
-    this.show ? this.showTitle="Hide Answer" : this.showTitle="Show Answer"  
+    this.show ? this.showTitle="Hide Answer" : this.showTitle="Show Answer";
   }
 
   hideAnswer(){
     this.show = false;
     this.showTitle = "Show Answer";
+    this.userAnswer = null;
+    this.result = null;
+    this.userAnswer = null
   }
 }

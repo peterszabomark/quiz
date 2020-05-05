@@ -9,12 +9,12 @@
         <button class="card-next-button" (click)="addNewQuestion()">Next Question</button>
     </div>
     <div class="card-question">{{question}}</div>
-    <input class="card-input" type="text" name="useranswer" placeholder="Write you answer">
+    <input class="card-input" type="text" [(ngModel)]="addedAnswer"  placeholder="Write you answer">
     <div class="card-fill">
         <button class="card-button show" (click)="toggleShow()">{{showTitle}}</button>
-        <button class="card-button add" >Add Answer</button>
+        <button class="card-button add" (click)="addAnswer(addedAnswer)">Add Answer</button>
     </div>
 </div>
 <div class="answer-container" *ngIf="show">
-    <app-answer-card [answer]="answer"></app-answer-card>
+    <app-answer-card [correctAnswer]="correctAnswer" [userAnswer]="userAnswer" [result] ="result"></app-answer-card>
 </div>

@@ -7,7 +7,9 @@ import { Component, OnInit, Input } from '@angular/core';
 })
 export class AnswerCardComponent implements OnInit {
 
-  @Input() answer: String;
+  @Input() correctAnswer: String;
+  @Input() userAnswer: String;
+  @Input() result: String;
 
   constructor() { }
 
