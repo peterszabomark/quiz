@@ -1,3 +1,10 @@
+@keyframes display{
+    0% {opacity: 0}
+    25% {opacity: 0.25}
+    50% {opacity: 0.50}
+    75% {opacity: 0.75}
+    100% {opacity: 1}
+}
 .answer-card-container{
     box-sizing: border-box;
     margin: 5vh 0;
@@ -8,6 +15,7 @@
     border-radius: 10px;
     color:#959595;
     box-shadow: 8px 8px 7px 1px rgb(212, 212, 212);
+    animation: display .5s linear;
     @media (max-width:1024px) {
         width: 80vw;
     }
