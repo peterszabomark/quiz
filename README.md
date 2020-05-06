@@ -6,11 +6,9 @@ INSTALLATION
 
 ```
 npm install
-
 ```
 RUN
 
 ```
 npm start / ng serve --open
-
 ```
