@@ -7,12 +7,14 @@ import { AppComponent } from './app.component';
 import { QuestionCardComponent } from './question-card/question-card.component';
 import { AnswerCardComponent } from './answer-card/answer-card.component';
 import { HttpClientModule } from '@angular/common/http';
+import { HeaderComponent } from './header/header.component';
 
 @NgModule({
   declarations: [
     AppComponent,
     QuestionCardComponent,
-    AnswerCardComponent
+    AnswerCardComponent,
+    HeaderComponent
   ],
   imports: [
     BrowserModule,
