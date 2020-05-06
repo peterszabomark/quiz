@@ -19,6 +19,10 @@
         width: 98vw;
         box-shadow: none;
     }
+    @media (max-width:250px) {
+        width: 248px;
+        box-shadow: none;
+    }
     .header{
         display: flex;
         flex-direction: row;
@@ -39,7 +43,10 @@
                 border-radius: 5px;
                 color:#959595;
                 outline: none;
-            } 
+            }
+            .category-select:hover{
+                border: 1px solid #8a8a8a;
+            }
         }
         .card-next-button{
             background-color: #fff;

@@ -26,4 +26,7 @@
         width: 98vw;
         box-shadow: none;
     }
+    @media (max-width:250px) {
+        width: 248px;
+    }
 }

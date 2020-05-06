@@ -9,15 +9,16 @@ import { Category } from '../models/category.model';
 })
 export class QuestionCardComponent implements OnInit {
 
-
-  question:any;
-  correctAnswer: any;
-  userAnswer: any;
-  addedAnswer: any;
+  question: String;
+  correctAnswer: String;
+  userAnswer: String;
+  addedAnswer: String;
   result: String;
+
   separateQuestions: any;
   categoryId: number = 0;
-  itemIndex: any;
+  itemIndex: number;
+
   categoryd: Category[] = [
     {id:0, name:"Random"},
     {id:21, name:"Animals"},
