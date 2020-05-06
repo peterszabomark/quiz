@@ -1,0 +1,13 @@
+.header-content{
+    height: 50px;
+    width: 100%;
+    margin: 0;
+    display:flex;
+    justify-content: center;
+    align-items: center;
+    background-color: rgb(88, 137, 216);
+    color: #ffffff;
+    @media (max-width:250px) {
+        width: 248px;
+    }
+}
