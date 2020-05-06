@@ -10,7 +10,7 @@
     </div>
     <div class="card-question">{{question}}</div>
     <input class="card-input" type="text" [(ngModel)]="addedAnswer"  placeholder="Write you answer">
-    <div class="card-fill">
+    <div class="card-action-field">
         <button class="card-button show" (click)="toggleShow()">{{showTitle}}</button>
         <button class="card-button add" (click)="addAnswer(addedAnswer)">Add Answer</button>
     </div>
